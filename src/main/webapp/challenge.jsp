@@ -9,7 +9,7 @@
 <html>
 <body>
 <h1>Ты потерял память. Принять вызов НЛО?</h1>
-<form action="/mistake" method="post">
+<form action="${pageContext.request.contextPath}/mistake" method="post">
     <div>
         <input type="radio" name="choice" value="approved">Принять вызов
         <br>
