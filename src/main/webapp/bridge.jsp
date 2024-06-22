@@ -5,23 +5,27 @@
   Time: 14:01
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.dvorenenko.model.UserInfo" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <html>
-<head>
-    <title>Title</title>
-</head>
 <body>
 <h1>Ты принял вызов. Поднимешься на мостик к капитану?</h1>
-<form action="who_are_you.jsp">
+<form action="${pageContext.request.contextPath}/bridge" method="post">
     <div>
-        <input type="radio" id="firstChoice" name="choice" value="approved" />
-        <label for="firstChoice">Подняться на мостик</label>
+        <input type="radio" name="choice" value="approved">Принять вызов
         <br>
-        <input type="radio" id="secondChoice" name="choice" value="rejected" />
-        <label for="secondChoice">Отказаться подниматься на мостик</label>
+        <input type="radio" name="choice" value="rejected">Отклонить вызов
+        <br>
+        <br>
     </div>
     <div>
-        <button type="submit">Ответить</button>
+        <input type="submit" value="Ответить"></input>
+    </div>
+    <div style='position: fixed; bottom: 0; left: 0;'>
+        <p>Статистика:</p>
+        <p>Имя пользователя:<%= UserInfo.getInstance().getName() %></p>
+        <p>IP address: <%= UserInfo.getInstance().getIpAddress() %></p>
+        <p>Количество игр: <%= UserInfo.getInstance().getQuantityGame() %></p>
     </div>
 </form>
 </body>

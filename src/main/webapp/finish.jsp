@@ -1,23 +1,21 @@
 <%--
   Created by IntelliJ IDEA.
   User: aldvo
-  Date: 15.06.2024
-  Time: 13:35
+  Date: 18.06.2024
+  Time: 19:56
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="com.dvorenenko.model.UserInfo" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <html>
+
 <body>
-<h1>Ты потерял память. Принять вызов НЛО?</h1>
-<form action="${pageContext.request.contextPath}/challenge" method="post">
-    <div id="mainContent">
-        <input type="radio" name="choice" value="approved">Принять вызов
-        <br>
-        <input type="radio" name="choice" value="rejected">Отклонить вызов
-        <br>
-        <br>
-        <input type="submit" value="Ответить"></input>
+<h1>Тебя вернули домой.</h1>
+<h1>Победа</h1>
+
+<form action="${pageContext.request.contextPath}/restart" method="get">
+    <div>
+        <input type="submit" value="Начать игру заново">
     </div>
     <div style='position: fixed; bottom: 0; left: 0;'>
         <p>Статистика:</p>
@@ -26,5 +24,6 @@
         <p>Количество игр: <%= UserInfo.getInstance().getQuantityGame() %></p>
     </div>
 </form>
+
 </body>
 </html>
