@@ -12,18 +12,18 @@
 <h1>Ты поднялся на мостик. Ты кто?</h1>
 <form action="${pageContext.request.contextPath}/climb_challenge" method="post">
     <div>
-        <input type="radio" name="choice" value="approved">Рассказать правду о себе
+        <input type="radio" name="choice" value="approved" checked>Рассказать правду о себе
         <br>
         <input type="radio" name="choice" value="rejected">Солгать о себе
         <br>
         <br>
     </div>
     <div>
-        <input type="submit" value="Ответить"></input>
+        <input type="submit" value="Ответить">
     </div>
     <div style='position: fixed; bottom: 0; left: 0;'>
         <p>Статистика:</p>
-        <p>Имя пользователя:<%= UserInfo.getInstance().getName() %></p>
+        <p>Имя пользователя: <%= UserInfo.getInstance().getName()%></p>
         <p>IP address: <%= UserInfo.getInstance().getIpAddress() %></p>
         <p>Количество игр: <%= UserInfo.getInstance().getQuantityGame() %></p>
     </div>

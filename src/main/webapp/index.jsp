@@ -1,6 +1,5 @@
 <%@ page import="com.dvorenenko.model.UserInfo" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-
 <html>
 <body>
 <h1>Пролог</h1>
@@ -20,7 +19,7 @@
 <p>А как обращаться к Вам?</p>
 <br>
 
-<form action="${pageContext.request.contextPath}/index" method="get">
+<form action="${pageContext.request.contextPath}/index" method="post">
     <div>
         <label for="name">Укажите своё имя: </label>
         <input type="text" name="name" id="name" required/>
@@ -30,7 +29,7 @@
     </div>
     <div style='position: fixed; bottom: 0; left: 0;'>
         <p>Статистика:</p>
-        <p>Имя пользователя:<%= UserInfo.getInstance().getName() %></p>
+        <p>Имя пользователя: <%= UserInfo.getInstance().getName() %></p>
         <p>IP address: <%= UserInfo.getInstance().getIpAddress() %></p>
         <p>Количество игр: <%= UserInfo.getInstance().getQuantityGame() %></p>
     </div>

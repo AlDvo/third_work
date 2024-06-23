@@ -16,9 +16,14 @@ public class FirstChallenge extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
+        jakarta.servlet.http.HttpSession session = request.getSession();
 
-        String username = request.getParameter("name");
+//        String name = request.getParameter("name");
+//        session.setAttribute( "loggedInUsername", name);
+
         String address = request.getRemoteAddr();
+        String username = (String) session.getAttribute("loggedInUsername");
+
 
         user.setName(username);
         user.setIpAddress(address);

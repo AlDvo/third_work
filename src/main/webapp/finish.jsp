@@ -19,7 +19,7 @@
     </div>
     <div style='position: fixed; bottom: 0; left: 0;'>
         <p>Статистика:</p>
-        <p>Имя пользователя:<%= UserInfo.getInstance().getName() %></p>
+        <p>Имя пользователя: <%= UserInfo.getInstance().getName() %></p>
         <p>IP address: <%= UserInfo.getInstance().getIpAddress() %></p>
         <p>Количество игр: <%= UserInfo.getInstance().getQuantityGame() %></p>
     </div>

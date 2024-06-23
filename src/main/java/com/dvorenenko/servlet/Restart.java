@@ -16,6 +16,11 @@ public class Restart extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
+
+        jakarta.servlet.http.HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("loggedInUsername");
+        user.setName(username);
+
         user.updateQuantityGame();
         try {
             request.getRequestDispatcher("/index.jsp").forward(request, response);

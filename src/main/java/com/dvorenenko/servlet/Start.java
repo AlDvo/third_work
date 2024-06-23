@@ -15,16 +15,22 @@ public class Start extends HttpServlet {
     UserInfo user = UserInfo.getInstance();
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) {
 
-        String username = request.getParameter("name");
+        jakarta.servlet.http.HttpSession session = request.getSession();
+
+        String name = request.getParameter("name");
+        session.setAttribute("loggedInUsername", name);
+
         String address = request.getRemoteAddr();
+        String username = (String) session.getAttribute("loggedInUsername");
+
 
         user.setName(username);
         user.setIpAddress(address);
 
         try {
-                request.getRequestDispatcher("/challenge.jsp").forward(request, response);
+            request.getRequestDispatcher("/challenge.jsp").forward(request, response);
 
         } catch (ServletException e) {
             throw new RuntimeException(e);

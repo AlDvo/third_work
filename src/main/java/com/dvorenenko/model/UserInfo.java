@@ -3,9 +3,9 @@ package com.dvorenenko.model;
 public final class UserInfo {
     private static UserInfo instance = new UserInfo();
 
-    public static String ipAddress;
-    public static String name;
-    public static int quantityGame = 0;
+    private String ipAddress;
+    private String name;
+    private int quantityGame = 0;
 
     public static UserInfo getInstance() {
         return instance;
@@ -26,12 +26,12 @@ public final class UserInfo {
         return quantityGame;
     }
 
-    public void setName(String variable1) {
-        name = variable1;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setIpAddress(String variable2) {
-        ipAddress = variable2;
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
     }
 
     public void updateQuantityGame() {
