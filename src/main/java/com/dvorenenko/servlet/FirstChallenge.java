@@ -18,9 +18,6 @@ public class FirstChallenge extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
         jakarta.servlet.http.HttpSession session = request.getSession();
 
-//        String name = request.getParameter("name");
-//        session.setAttribute( "loggedInUsername", name);
-
         String address = request.getRemoteAddr();
         String username = (String) session.getAttribute("loggedInUsername");
 
@@ -29,7 +26,7 @@ public class FirstChallenge extends HttpServlet {
         user.setIpAddress(address);
 
         try {
-                String param = request.getParameter("choice");
+            String param = request.getParameter("choice");
             if ("approved".equals(param)) {
                 request.getRequestDispatcher("/bridge.jsp").forward(request, response);
             } else {
